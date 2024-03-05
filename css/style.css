@@ -1,1 +1,70 @@
 @import url(variables.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    ". venta "
+    "titulo venta "
+    "imagenes venta "
+    "datos venta "
+    ;
+}
+
+.banner{
+    background: var(--color-banner);
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -5;
+}
+
+.item_1{
+    background: azure;
+    grid-area: venta;
+}
+
+.item_1 img{
+    height: 100vh;
+    object-fit: contain;
+}
+
+
+.item_2{
+    grid-area: titulo;
+}
+
+.item_2 h1{
+    color: var(--color-font);
+}
+
+.item_2 h1 strong{
+    color: red;
+}
+
+.item_3{
+    color: var(--color-font);
+    grid-area: imagenes;
+}
+
+.item_3 img{
+    position: relative;
+    border-radius: 50%;
+    padding-left: -5px;
+}
+
+.item_4{
+    color: var(--color-font);
+    grid-area: datos;
+}
