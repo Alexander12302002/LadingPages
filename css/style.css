@@ -15,7 +15,7 @@ body{
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-template-areas: 
-    ". venta "
+    "titulo venta "
     "titulo venta "
     "imagenes venta "
     "datos venta "
@@ -27,7 +27,11 @@ body{
     position: absolute;
     width: 100%;
     height: 100vh;
-    z-index: -5;
+    z-index: -1;
+}
+
+.item_2, .item_3, .item_4{
+    margin-left: 40px;
 }
 
 .item_1{
@@ -36,17 +40,23 @@ body{
 }
 
 .item_1 img{
+    width: 100%;
     height: 100vh;
-    object-fit: contain;
+    position: relative;
+    z-index: 1;
 }
-
 
 .item_2{
     grid-area: titulo;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .item_2 h1{
     color: var(--color-font);
+    font-size: 45px;
+    margin-top: 70px;
 }
 
 .item_2 h1 strong{
@@ -58,13 +68,49 @@ body{
     grid-area: imagenes;
 }
 
-.item_3 img{
+.item_3 .images{
+    margin-top: -20px;
+}
+
+.item_3 .images img{
     position: relative;
     border-radius: 50%;
-    padding-left: -5px;
+    margin-left: -20px;
+}
+
+.item_3 .lorem{
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.item_3 .bottom button{ 
+    margin-top: 25px;
+    color: var(--color-font);
+    border: none;
+    border-radius: 15px;
+    width: 150px;
+    height: 30px;
+    background: var(--color-bottom);
 }
 
 .item_4{
     color: var(--color-font);
     grid-area: datos;
+}
+
+.item_4, .caja_1, .caja_2, .caja_3{
+    display: flex;
+    position: relative;
+    z-index: 2;
+    width: 180%;
+    align-items: center;
+}
+
+.caja_1, .caja_2, .caja_3{
+    padding-left: 15px;
+    font-size: 10px;
+    height: 50px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 100%), rgba(255, 255, 255, 0));
 }
